@@ -60,11 +60,11 @@ public class A1Adept {
 		
 		// Print out the results.
 		System.out.println("Biggest: " + customerFirstNames[mostSpent] + " " +
-				customerLastNames[mostSpent] + "(" +
+				customerLastNames[mostSpent] + " (" +
 				String.format("%.2f",customerAmountSpent[mostSpent]) + ")");
 		
 		System.out.println("Smallest: " + customerFirstNames[leastSpent] + " " +
-				customerLastNames[leastSpent] + "(" +
+				customerLastNames[leastSpent] + " (" +
 				String.format("%.2f",customerAmountSpent[leastSpent]) + ")");
 		
 		System.out.println("Average: " + String.format("%.2f",averageSpent));
