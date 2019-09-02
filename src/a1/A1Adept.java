@@ -20,8 +20,6 @@ public class A1Adept {
 		for(int i = 0;i < itemCount;i++) {
 			itemNames[i] = scan.next();
 			itemPrices[i] = scan.nextDouble();
-			
-			int itemCustomers = scan.nextInt(); //This value is read only to avoid parsing errors
 		}
 		
 		// Read in the customer count and create arrays to hold information for each one.
