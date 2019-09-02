@@ -25,7 +25,7 @@ public class A1Novice {
 			customersLastNames[i] = scan.next();
 			
 			// Go through each item each customer has purchased
-			// and add the cost of those items to the total sum
+			// and add the cumulative cost of those items to the total sum
 			// purchased by the customer.
 			int itemsBought = scan.nextInt();
 			
@@ -37,6 +37,9 @@ public class A1Novice {
 				customersTotalPurchased[i] += itemQuantity * itemPrice;
 			}
 		}
+		
+		// Done parsing input, close scanner.
+		scan.close();
 		
 		// Print out information gathered from each customer.
 		for(int i = 0;i < customerCount;i++) {

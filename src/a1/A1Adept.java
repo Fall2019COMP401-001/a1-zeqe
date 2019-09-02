@@ -52,6 +52,9 @@ public class A1Adept {
 			}
 		}
 		
+		// Done parsing input, close scanner.
+		scan.close();
+		
 		// Use helper functions to find the customers that spent the most and the least,
 		// and to figure out the average amount spent.
 		int leastSpent = smallestValueIndex(customerAmountSpent);
