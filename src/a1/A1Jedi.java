@@ -51,7 +51,7 @@ public class A1Jedi {
 				// the customer to the total number of items purchased.
 				for(int k = 0;k < itemCount;k++) {
 					if(itemNames[k].equals(itemName)) {
-						itemsCustomersBought[k]++;
+						itemsCustomersBought[k] += 1;
 						itemsTotalBought[k] += itemQuantity;
 					}
 				}
