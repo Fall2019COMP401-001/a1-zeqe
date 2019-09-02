@@ -50,17 +50,20 @@ public class A1Jedi {
 				String itemName = scan.next();
 				
 				// Use the item name to find its index in the item arrays.
-				// If it is found, add one to the number of customers that purchased
-				// that item, and then add the quantity of items purchased by
-				// the customer to the total number of items purchased. Also make
-				// the boolean tracking value for the customer-item combination true,
-				// to avoid counting the same customer multiple times.
+				// If it is found, add the quantity of items purchased by
+				// the customer to the total number of items purchased. If
+				// the customer has not been recorded as buying it yet,
+				// add one to the number of customers that has bought the item
+				// and mark that the customer has bought the item.
 				for(int k = 0;k < itemCount;k++) {
-					if(itemNames[k].equals(itemName) && !customerBoughtItem[i][k]) {
-						itemsCustomersBought[k] += 1;
-						itemsTotalBought[k] += itemQuantity;
+					if(itemNames[k].equals(itemName)) {
+						if(!customerBoughtItem[i][k]) {
+							itemsCustomersBought[k] += 1;
+							
+							customerBoughtItem[i][k] = true;
+						}
 						
-						customerBoughtItem[i][k] = true;
+						itemsTotalBought[k] += itemQuantity;
 					}
 				}
 			}
