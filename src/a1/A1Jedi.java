@@ -33,6 +33,10 @@ public class A1Jedi {
 		int[] itemsCustomersBought = new int[itemCount];
 		int[] itemsTotalBought = new int[itemCount];
 		
+		// Create an array of booleans to keep track of which customers
+		// already purchased which items.
+		boolean[][] customerBoughtItem = new boolean[customerCount][itemCount];
+		
 		for(int i = 0;i < customerCount;i++) {
 			// Read in information for each customer
 			customerFirstNames[i] = scan.next();
@@ -48,11 +52,15 @@ public class A1Jedi {
 				// Use the item name to find its index in the item arrays.
 				// If it is found, add one to the number of customers that purchased
 				// that item, and then add the quantity of items purchased by
-				// the customer to the total number of items purchased.
+				// the customer to the total number of items purchased. Also make
+				// the boolean tracking value for the customer-item combination true,
+				// to avoid counting the same customer multiple times.
 				for(int k = 0;k < itemCount;k++) {
-					if(itemNames[k].equals(itemName)) {
+					if(itemNames[k].equals(itemName) && !customerBoughtItem[i][k]) {
 						itemsCustomersBought[k] += 1;
 						itemsTotalBought[k] += itemQuantity;
+						
+						customerBoughtItem[i][k] = true;
 					}
 				}
 			}
